@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{% static 'run.png'%}">
+  <title>KickWave Shopping</title>
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  <link rel="stylesheet" href="{% static 'men.css'%}">
+  <link rel="stylesheet" href="{% static 'css2.css'%}">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    .about img{
+        opacity: 0.5;
+        z-index: -1;
+    }
+    .container{
+      position: absolute;
+      text-align: start;
+      margin-top: 160px;
+    }
+   .container input{
+      border: 1px solid rgba(128, 128, 128, 0.563);
+      border-radius: 10px ;
+      width: 30%;
+      padding: 10px;
+      font-size: medium;
+      background-color: rgba(174, 172, 176, 0.463);
+      outline: none;
+  }
+  .span{
+    font-size: large;
+    font-family: 'Times New Roman', Times, serif;
+ }
+
+  #btn{
+    font-family:sans-serif;
+    padding: 10px;
+    width: 30%;
+    font-size: x-large;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.644);
+    color: white;
+    border: none;
+ }
+ #btn:hover{
+  background-color: black;
+  color: white;
+ }
+ span{
+  margin-left: 60px;
+ }
+ span a{
+  text-decoration: none;
+  font-size: larger;
+}
+</style>
+
+<body>
+  <header>
+    
+    <span class="name">KickWave</span>
+    <div class="navitem">
+      <ul class="navbar">
+        <li><a href="/home">HOME</a></li>
+        <li><a href="/men">MEN</a></li>
+        <li><a href="/women">WOMEN</a></li>
+        <li><a href="/about">ABOUT US</a></li>
+      </ul>
+    </div>
+    <div class="navitem">
+      <input type="text" placeholder="Search">
+      <img class="si" src="{% static 'search-regular-24.png' %}" alt="">
+    </div>
+    <div class="navmenu">
+      <div class="dropdown" >
+        <button  type="button" class="btn btn-primary" data-bs-toggle="dropdown"><i id="i" class='bx bx-user'></i>
+          PROFILE
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/register">REGISTER</a></li>
+          <li><a class="dropdown-item" href="/login">LOGIN</a></li>
+        </ul>
+        <button type="button" class="btn btn-primary "><i class='bx bx-cart'></i>
+          CART
+        </button>
+      </div>
+    </div>
+
+  </header>
+ 
+  </div>
+
+  <div class="about">
+    <img src="{% static 'shoe.jpg'%}" alt="">
+    <div class="container">   
+      <form class="up" action="login_user" method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          <label class="span">UserName: </label><br>
+          <input type="text" name="username" placeholder="User Name"><br><br>
+          <label class="span">Password: </label><br>
+          <input type="password" name="password" placeholder="Password"><br><br>
+          <label class="span">Phone Number: </label><br>
+          <input type="text" name="phone" placeholder="Phone Number"><br><br>
+          <label class="span">Email Address: </label><br>
+          <input type="email" name="email" placeholder="Email"><br><br>
+          <button id="btn">REGISTER</button><br>
+          <span>Already have an account ?<a href="login">Login</a></span>
+      </form>
+    </div> 
+    
+  </div>
+
+
+  <nav class="end">
+    <div class="last">
+      <h1>Our page has come to an end, but our relationship with you has not.</h1>
+      <h4>Stay sustainable and subscribe now</h4>
+      <input type="email" placeholder="Enter your email address"><button>subscribe</button>
+    </div>
+    <div class="detail">
+      <div class="para">
+        <h4>SUPPORT</h4>
+        <P>contact us</P>
+        <p>Promotion & Sale</p>
+        <p>Track order</p>
+        <p>Shoe Care</p>
+        <p>Tech Glossary</p>
+        <p>Return/Exchange</p>
+      </div>
+      <div  class="para">
+        <h5>FAQ</h5>
+        <p>My Account</p>
+        <p>Exchange & Return Policy</p>
+        <p>Privacy Policy</p>
+        <p>Term & condition</p>
+        <p>Shoes</p>
+        <p>Cookie Setting</p>
+      </div>
+      <div  class="para">
+        <h4>ABOUT</h4>
+        <p>Company</p>
+        <p>Corporate News</p>
+        <p>Press Center</p>
+        <p>Press Center</p>
+        <p>Store Locator</p>
+        <p>Careers</p>
+      </div>
+      <div  class="para">
+        <h4>STAY UP TO DATE</h4>
+        <div class="icon">
+        <i class='bx bxl-youtube'></i>
+        <i class='bx bxl-twitter'></i>
+        <i class='bx bxl-pinterest'></i>
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-facebook-circle'></i>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+</body>
+
+</html>

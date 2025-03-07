@@ -1,0 +1,66 @@
+.container {
+  border: 2px solid rgba(0, 0, 0, 0.407);
+  width: 30%;
+  border-radius: 50px;
+  display: inline;
+  display: flex;
+  float: left;
+  margin: 100px;
+  margin-left: 150px;
+}
+
+.container input {
+  border: 1px solid rgba(128, 128, 128, 0.563);
+  border-radius: 10px;
+  width: 90%;
+  padding: 10px;
+  font-size: medium;
+  background-color: rgba(174, 172, 176, 0.463);
+  outline: none;
+}
+
+.span {
+  font-size: large;
+  font-family: sans-serif;
+  color: rgb(64, 7, 117);
+}
+
+#btn {
+  font-family: sans-serif;
+  padding: 10px;
+  margin-left: 35px;
+  width: 60%;
+  font-size: x-large;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.644);
+  color: white;
+  border: none;
+}
+
+#btn:hover {
+  background-color: black;
+  color: white;
+}
+
+body {
+  background-color: rgba(12, 12, 12, 0.401);
+}
+
+.container img {
+  border-radius: 50px;
+  width: 453px;
+  opacity: 0.2;
+  z-index: -1;
+}
+
+form {
+  margin-left: -400px;
+  padding: 20px;
+  font-family: sans-serif;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.container span {
+  margin-left: 120px;
+}

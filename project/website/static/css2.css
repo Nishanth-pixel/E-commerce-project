@@ -1,0 +1,65 @@
+.navmenu{
+    margin-left: -80px;
+  }
+  .dropdown button{
+    background-color: #04040c1e;
+    color: black;
+    border: none;
+    margin-left: 20px;
+    font-family: sans-serif;
+  }
+  
+  .dropdown-menu a:hover{
+  background-color: black;
+  color: white;
+  }
+  .dropdown{
+    margin-right: 40px;
+  }
+  .navitem{
+    margin-left: 30px;
+  }
+  .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: sans-serif;
+    font-size:large;
+    color: black;
+    margin-left: 70px;
+  }
+  .navbar li{
+    list-style: none;
+    text-decoration: none;
+    padding-left: 40px;
+    padding: 30px;
+  }
+  .navbar a{
+    color: black;
+    margin-top: 10px;
+    text-decoration: none;
+  }
+  .navitem input{
+    width: 135%;
+    border: 1px solid rgba(128, 128, 128, 0.049);
+    padding: 3px;
+    background-color: rgba(128, 128, 128, 0.129);
+    border-radius: 50px;
+    outline: none;
+    padding-left: 20px;
+    margin-left: -80px;
+  }
+  .si{
+    opacity: 0.2;
+    margin-left: -38px;
+    width: 22px;
+    margin-top: -5px;
+  }
+  
+  .center{
+    margin-top: 0px;
+  }
+  .about{
+    margin-top: 0;
+  }

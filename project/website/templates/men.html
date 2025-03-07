@@ -1,0 +1,180 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/x-icon" href="{% static 'run.png'%}">
+  <title>KickWave Shopping</title>
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  <link rel="stylesheet" href="{% static 'men.css'%}">
+  <link rel="stylesheet" href="{% static 'css2.css'%}">
+  <link rel="stylesheet" href="{% static 'product.css'%}">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+  .end{
+    margin-top: 30px;
+  }
+  .idname {
+    font-family: sans-serif;
+    margin-left: 20px;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  #product{
+    margin-bottom: 30px;
+  }
+  .m:hover{
+    border-radius: 5px;
+    box-shadow: 3px 6px 15px 10px rgba(81, 80, 80, 0.181);
+  }
+</style>
+
+<script>
+  function message(){
+    alert("your item has been buy success")
+  }
+</script>
+
+<body>
+  <header>
+    
+    <span class="name">KickWave</span>
+    <div class="navitem">
+      <ul class="navbar">
+        <li><a href="/home/{{user.id}}">HOME</a></li>
+        <li><a href="/men/{{user.id}}">MEN</a></li>
+        <li><a href="/women/{{user.id}}">WOMEN</a></li>
+        <li><a href="/about/{{user.id}}">ABOUT US</a></li>
+      </ul>
+    </div>
+    <div class="navitem">
+      <input type="text" placeholder="Search">
+      <img class="si" src="{% static 'search-regular-24.png' %}" alt="">
+    </div>
+    <div class="navmenu">
+      <div class="dropdown" >
+        <button  type="button" class="btn btn-primary" data-bs-toggle="dropdown"><i id="i" class='bx bx-user'></i>
+          {{user.username}}
+        </button>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="/demo">LOGOUT</a></li>
+        </ul>
+        <a href="/cart/{{user.id}}">
+        <button type="button" class="btn btn-primary "><i class='bx bx-cart'></i>
+          CART
+        </button></a>
+        <span class="idname">{{username}}</span>
+      </div>
+    </div>
+
+  </header>
+ 
+  </div>
+
+  <div class="center">
+    <h3>Footwear for Best Sellers</h3>
+    <h1>MENS</h1>
+  </div>
+
+  <section id="product">
+
+
+    <form action="men" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+    <div id="prod">
+      {% for i in all %}
+        <div class="men_shoe">
+          <div class="m">
+            {% if i.image %}
+            <img src="{{i.image.url }}" alt="">
+            {% endif %}
+            <div class="price">
+              <h5>{{i.productname}}</h5>
+              <div class="star">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star-half'></i>
+              </div>
+              <h5>Rs. {{i.offerprice}}</h5><span class="old_p">MRP: {{i.productprice}}</span>
+              <a class="crt" href="#"><i class='bx bx-down-arrow-alt'>{{i.percentage}}</i></a><br>
+              <div  class="add_cart" onclick="alert('Your item is successfully added to cart ')">
+             <a href="/addcard/{{user.id}}/{{i.id}}">  <i class='bx bx-cart'></i> <span>ADD TO CART</span></a> 
+              </div>
+              <div class="buy">
+                <a href="#" onclick="message()">
+                <span>BUY</span>
+              </a>
+              </div>
+            </div>
+          </div>
+        </div>  
+         {% endfor %}
+      </form>
+    </div>
+
+  </section>
+
+  <nav class="end">
+    <div class="last">
+      <h1>Our page has come to an end, but our relationship with you has not.</h1>
+      <h4>Stay sustainable and subscribe now</h4>
+      <input type="email" placeholder="Enter your email address"><button>subscribe</button>
+    </div>
+    <div class="detail">
+      <div class="para">
+        <h4>SUPPORT</h4>
+        <P>contact us</P>
+        <p>Promotion & Sale</p>
+        <p>Track order</p>
+        <p>Shoe Care</p>
+        <p>Tech Glossary</p>
+        <p>Return/Exchange</p>
+      </div>
+      <div  class="para">
+        <h5>FAQ</h5>
+        <p>My Account</p>
+        <p>Exchange & Return Policy</p>
+        <p>Privacy Policy</p>
+        <p>Term & condition</p>
+        <p>Shoes</p>
+        <p>Cookie Setting</p>
+      </div>
+      <div  class="para">
+        <h4>ABOUT</h4>
+        <p>Company</p>
+        <p>Corporate News</p>
+        <p>Press Center</p>
+        <p>Press Center</p>
+        <p>Store Locator</p>
+        <p>Careers</p>
+      </div>
+      <div  class="para">
+        <h4>STAY UP TO DATE</h4>
+        <div class="icon">
+        <i class='bx bxl-youtube'></i>
+        <i class='bx bxl-twitter'></i>
+        <i class='bx bxl-pinterest'></i>
+        <i class='bx bxl-instagram'></i>
+        <i class='bx bxl-facebook-circle'></i>
+      </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+
+</body>
+
+</html>

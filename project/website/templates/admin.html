@@ -1,0 +1,61 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="{% static 'run.png'%}">
+    <title>KickWave Shopping</title>
+    <link rel="stylesheet" href="{% static 'adminpage.css'%}">
+  <style>
+    .container:hover{
+      transform: translateX(5px); 
+      box-shadow: 5px 5px 10px 10px rgba(52, 52, 172, 0.278);
+    }
+  </style>
+</head>
+<body style="background-color: rgba(210, 180, 140, 0.764);">
+   
+    <div class="container">
+      <img src="{% static 'about1.webp'%}" alt="">
+    <form  action="mendetail" method="POST" enctype="multipart/form-data">
+      
+        {% csrf_token %}
+        <span>MENS</span><br>
+        <label class="span">Productname: </label><br>
+        <input type="text" name="productname" placeholder="productname"><br><br>
+        <label class="span">Offerprice: </label><br>
+        <input type="text" name="offerprice" placeholder="newPrice"><br><br>
+        <label class="span">productprice: </label><br>
+        <input type="text" name="productprice" placeholder="oldPrice"><br><br>
+        <label class="span">Percentage: </label><br>
+        <input type="text" name="percentage" placeholder="percentage"><br><br>
+        <label class="span">image: </label><br>
+        <input type="file" name="image" placeholder="image"><br><br>
+       
+        <button id="btn">upload</button>
+    </form>
+</div>
+
+
+<div class="container">
+  <img src="{% static 'about2.webp'%}" alt="">
+  <form  action="womendetail" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <span>WOMENS</span><br>
+      <label class="span">Productname: </label><br>
+      <input type="text" name="productname" placeholder="productname"><br><br>
+      <label class="span">Offerprice: </label><br>
+      <input type="text" name="offerprice" placeholder="newPrice"><br><br>
+      <label class="span">productprice: </label><br>
+      <input type="text" name="productprice" placeholder="oldPrice"><br><br>
+      <label class="span">Percentage: </label><br>
+      <input type="text" name="percentage" placeholder="percentage"><br><br>
+      <label class="span">image: </label><br>
+      <input type="file" name="image" placeholder="image"><br><br>
+     
+      <button id="btn">upload</button>
+  </form>
+</div>
+</body>
+</html>
